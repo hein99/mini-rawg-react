@@ -11,20 +11,16 @@ function GameGrid() {
   return (
     <>
       {error && <p className="text-danger">{error}</p>}
-      <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
-        padding="10px"
-        spacing={10}
-      >
+      <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} padding="10px" spacing={10}>
         {isLoading &&
-          skeletons.map((_) => (
-            <GameCardContainer>
+          skeletons.map((_, index) => (
+            <GameCardContainer key={index}>
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
         {games.map((game) => (
-          <GameCardContainer>
-            <GameCard key={game.id} game={game} />
+          <GameCardContainer key={game.id}>
+            <GameCard game={game} />
           </GameCardContainer>
         ))}
       </SimpleGrid>
