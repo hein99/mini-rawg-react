@@ -11,7 +11,7 @@ function GameGrid() {
   return (
     <>
       {error && <p className="text-danger">{error}</p>}
-      <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} padding="10px" spacing={10}>
+      <SimpleGrid columns={{ sm: 1, lg: 3, xl: 5 }} padding="10px" spacing={3}>
         {isLoading &&
           skeletons.map((_, index) => (
             <GameCardContainer key={index}>
